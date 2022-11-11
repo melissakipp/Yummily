@@ -63,6 +63,16 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
+    public User findByEmail(String email) {
+        for (User user : this.findAll()) {
+            if (user.getEmail().toLowerCase().equals(email.toLowerCase())) {
+                return user;
+            }
+        }
+        throw new UsernameNotFoundException("email " + email + " not found");
+    }
+
+    @Override
     public boolean create(String username, String password, String role) {
         boolean userCreated = false;
 
