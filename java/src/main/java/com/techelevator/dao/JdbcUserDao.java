@@ -73,7 +73,7 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(String username, String password, String role) {
+    public boolean create(String username, String email, String password, String role) {
         boolean userCreated = false;
 
         // create user
