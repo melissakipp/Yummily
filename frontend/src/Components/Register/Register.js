@@ -2,6 +2,8 @@ import axios from 'axios'
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import { baseUrl } from '../../Shared/baseUrl'
+import '../Login/Login.css';
+
 
 class Register extends Component{
 
@@ -31,8 +33,10 @@ class Register extends Component{
         }
     }
 
+
     render(){
         return(
+            
             <div>
                 <h1>Create Account</h1>
                 <label class="sr-only">Username</label>
@@ -41,7 +45,7 @@ class Register extends Component{
                     id="username"
                     name="username"
                     class="form-control"
-                    placeholder="Username"
+                    placeholder="Username or Email"
                     v-model="user.username"
                     onChange={this.handleInputChange}
                     required
@@ -67,9 +71,10 @@ class Register extends Component{
                     onChange={this.handleInputChange}
                     required
                 />
-                <Link to="/login">Have an account?</Link>
-                <button type="submit" onClick={this.handleSubmit}>Sign in</button>
+                 <button id='RegisterBttn' type="submit" onClick={this.handleSubmit}>Register</button>
+                <Link id='HaveAccnt' to="/login">Have an account?</Link>
             </div>
+            
         )
     }
 }

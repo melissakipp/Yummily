@@ -6,6 +6,7 @@ import Home from '../Home/Home'
 import {addToken, deleteUser} from '../../Redux/actionCreators'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
+import React from 'react'
 
 const mapStateToProps = state => {
     return {
@@ -31,16 +32,19 @@ class Main extends Component {
 
     render(){
         return(
+           
+
             <div>
+
                 {this.props.token.token !== undefined ?
-                        <div>
-                            <Link to='/home'>Home | </Link>
-                            <Link to='/login' onClick={this.handleLogout}>logout</Link> 
+                        <div id='MainLinks'>
+                            <Link id='HomeLinkHome' to='/home'>Home</Link> 
+                            <Link id= 'LogoutLink' to='/login' onClick={this.handleLogout}>Logout</Link> 
                             <Redirect to='/home'/>
 
                         </div>  
                     : 
-                        <Link to='/login'>Home | </Link>
+                        <Link id='HomeLinkLogin'  to='/login'>Home</Link>
                 }
                 <Switch>
                     <Route path='/login' component={() => <Login/>}/>

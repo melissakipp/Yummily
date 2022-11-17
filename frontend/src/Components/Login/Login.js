@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom'
 import {addToken, addUser} from '../../Redux/actionCreators'
 import {baseUrl} from '../../Shared/baseUrl'
 import axios from 'axios'
+import './Login.css';
 
 
 
@@ -45,7 +46,8 @@ class Login extends Component {
 
     render(){
         return(
-            <div>
+        
+            <div className='Forms'>
                 <h1>Please Sign In</h1>
                 <label class="sr-only">Username</label>
                 <input
@@ -53,7 +55,7 @@ class Login extends Component {
                     id="username"
                     name="username"
                     class="form-control"
-                    placeholder="Username"
+                    placeholder="Username or Email"
                     v-model="user.username"
                     onChange={this.handleInputChange}
                     required
@@ -69,8 +71,9 @@ class Login extends Component {
                     onChange={this.handleInputChange}
                     required
                 />
-                <Link to="/register">Need an account?</Link>
-                <button type="submit" onClick={this.handleLogin}>Sign in</button>
+                <button id='SignInBttn' type="submit" onClick={this.handleLogin}>Sign in</button>
+
+                <Link id='NeedAccnt' to="/register">Need an account?</Link>
             </div>
         )
     }
