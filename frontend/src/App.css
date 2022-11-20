@@ -7,7 +7,7 @@ body {
   align-items: center;
   justify-content: center;
   background-image: 
-  url("C:\Users\Admin\Desktop\meritamerica\MeritFinCap\final-capstone\frontend\src\Components\assets\BGIMG.png");
+  url("./Components/assets/BGIMG.png");
   background-repeat: no-repeat;
   background-size: cover;
  background-attachment: fixed;
