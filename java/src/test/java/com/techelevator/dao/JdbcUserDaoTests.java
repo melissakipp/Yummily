@@ -59,9 +59,9 @@ public class JdbcUserDaoTests extends FinalCapstoneDaoTests {
 //        Assert.assertThat(inDB.getPassword()).isNotEqualTo(userCreated.getPassword());
     }
 
-    public <T> ResponseEntity<T> postSignup(Object request, Class<T> response){
-        return testRestTemplate.postForEntity(API_1_0_USERS, request, response);
-    }
+//    public <T> ResponseEntity<T> postSignup(Object request, Class<T> response){
+//        return testRestTemplate.postForEntity(API_1_0_USERS, request, response);
+//    }
 
 
 }
