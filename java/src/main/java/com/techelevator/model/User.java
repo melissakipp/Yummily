@@ -1,17 +1,25 @@
 package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class User {
 
+   @Id
    private Long id;
+   @NotBlank(message = "Enter your username")
    private String username;
    @JsonIgnore
    private String password;
+   @NotBlank(message = "Enter your email")
+   @Email(message = "Enter a valid email address")
+   private String email;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
@@ -47,6 +55,14 @@ public class User {
 
    public void setPassword(String password) {
       this.password = password;
+   }
+
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
    }
 
    public boolean isActivated() {
