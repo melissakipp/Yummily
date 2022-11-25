@@ -55,7 +55,7 @@ public class JdbcRestaurantDao implements RestaurantDao {
         restaurant.setAddress(rs.getString("address"));
         restaurant.setCity(rs.getString("city"));
         restaurant.setState(rs.getString("state"));
-        restaurant.setZipCode(rs.getString("zip_code"));
+        restaurant.setZipCode(rs.getInt("zip_code"));
         restaurant.setRating(rs.getInt("rating"));
         restaurant.setSlogan(rs.getString("slogan"));
         restaurant.setDescription(rs.getString("description"));
