@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface RestaurantDao {
 
-    List<Restaurant> findRestaurants(int zipCode);
+    List<Restaurant> findRestaurants(String zipCode);
 
 }
