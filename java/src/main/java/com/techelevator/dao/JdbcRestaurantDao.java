@@ -18,7 +18,7 @@ public class JdbcRestaurantDao implements RestaurantDao {
     }
 
     @Override
-    public List<Restaurant> findRestaurants(String zipCode) {
+    public List<Restaurant> findRestaurants(int zipCode) {
 
         List<Restaurant> restaurants = new ArrayList<>();
         String sqlStatement = "SELECT " +
