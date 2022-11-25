@@ -19,7 +19,7 @@ public class RestaurantController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/restaurants/{zipCode}", method = RequestMethod.GET)
-    public List<Restaurant> getRestaurantsByZipCode(@PathVariable int zipCode) {
+    public List<Restaurant> getRestaurantsByZipCode(@PathVariable String zipCode) {
         return restaurantDao.findRestaurants(zipCode);
     }
 
