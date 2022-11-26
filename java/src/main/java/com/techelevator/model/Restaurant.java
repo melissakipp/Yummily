@@ -20,7 +20,7 @@ public class Restaurant {
     private String open;
     private String close;
     private String category;
-    private String[] typeOfFood;
+    private String typeOfFood;
 
     public Long getRestaurantId() {
         return restaurantId;
@@ -142,11 +142,11 @@ public class Restaurant {
         this.category = category;
     }
 
-    public String[] getTypeOfFood() {
+    public String getTypeOfFood() {
         return typeOfFood;
     }
 
-    public void setTypeOfFood(String[] typeOfFood) {
+    public void setTypeOfFood(String typeOfFood) {
         this.typeOfFood = typeOfFood;
     }
 
@@ -155,14 +155,12 @@ public class Restaurant {
         if (this == o) return true;
         if (!(o instanceof Restaurant)) return false;
         Restaurant that = (Restaurant) o;
-        return getRating() == that.getRating() && Objects.equals(getRestaurantId(), that.getRestaurantId()) && Objects.equals(getRestaurantName(), that.getRestaurantName()) && Objects.equals(getPhoneNumber(), that.getPhoneNumber()) && Objects.equals(getEmail(), that.getEmail()) && Objects.equals(getAddress(), that.getAddress()) && Objects.equals(getCity(), that.getCity()) && Objects.equals(getState(), that.getState()) && Objects.equals(getZipCode(), that.getZipCode()) && Objects.equals(getSlogan(), that.getSlogan()) && Objects.equals(getDescription(), that.getDescription()) && Objects.equals(getImage(), that.getImage()) && Objects.equals(getOpen(), that.getOpen()) && Objects.equals(getClose(), that.getClose()) && Objects.equals(getCategory(), that.getCategory()) && Arrays.equals(getTypeOfFood(), that.getTypeOfFood());
+        return getRating() == that.getRating() && getRestaurantId().equals(that.getRestaurantId()) && Objects.equals(getRestaurantName(), that.getRestaurantName()) && Objects.equals(getPhoneNumber(), that.getPhoneNumber()) && Objects.equals(getEmail(), that.getEmail()) && Objects.equals(getAddress(), that.getAddress()) && Objects.equals(getCity(), that.getCity()) && Objects.equals(getState(), that.getState()) && Objects.equals(getZipCode(), that.getZipCode()) && Objects.equals(getSlogan(), that.getSlogan()) && Objects.equals(getDescription(), that.getDescription()) && Objects.equals(getImage(), that.getImage()) && Objects.equals(getOpen(), that.getOpen()) && Objects.equals(getClose(), that.getClose()) && Objects.equals(getCategory(), that.getCategory()) && Objects.equals(getTypeOfFood(), that.getTypeOfFood());
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(getRestaurantId(), getRestaurantName(), getPhoneNumber(), getEmail(), getAddress(), getCity(), getState(), getZipCode(), getRating(), getSlogan(), getDescription(), getImage(), getOpen(), getClose(), getCategory());
-        result = 31 * result + Arrays.hashCode(getTypeOfFood());
-        return result;
+        return Objects.hash(getRestaurantId(), getRestaurantName(), getPhoneNumber(), getEmail(), getAddress(), getCity(), getState(), getZipCode(), getRating(), getSlogan(), getDescription(), getImage(), getOpen(), getClose(), getCategory(), getTypeOfFood());
     }
 
     @Override
@@ -183,7 +181,7 @@ public class Restaurant {
                 ", open='" + open + '\'' +
                 ", close='" + close + '\'' +
                 ", category='" + category + '\'' +
-                ", typeOfFood=" + Arrays.toString(typeOfFood) +
+                ", typeOfFood='" + typeOfFood + '\'' +
                 '}';
     }
 

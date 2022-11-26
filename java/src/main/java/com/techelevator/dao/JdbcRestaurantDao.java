@@ -33,7 +33,11 @@ public class JdbcRestaurantDao implements RestaurantDao {
                 "rating, " +
                 "slogan, " +
                 "description, " +
-                "image " +
+                "image, " +
+                "open,  " +
+                "close, " +
+                "category, " +
+                "type_of_food " +
                 "FROM restaurants " +
                 "WHERE zip_code = ?;";
 
@@ -60,6 +64,10 @@ public class JdbcRestaurantDao implements RestaurantDao {
         restaurant.setSlogan(rs.getString("slogan"));
         restaurant.setDescription(rs.getString("description"));
         restaurant.setImage(rs.getString("image"));
+        restaurant.setOpen(rs.getString("open"));
+        restaurant.setClose(rs.getString("close"));
+        restaurant.setCategory(rs.getString("category"));
+        restaurant.setTypeOfFood(rs.getString("type_of_food"));
         return restaurant;
     }
 
