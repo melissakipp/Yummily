@@ -7,6 +7,7 @@ import {addToken, deleteUser} from '../../Redux/actionCreators'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import React from 'react'
+import SearchBar from '../SearchBar/SearchBar'
 
 const mapStateToProps = state => {
     return {
@@ -32,8 +33,7 @@ class Main extends Component {
 
     render(){
         return(
-           
-
+        
             <div>
 
                 {this.props.token.token !== undefined ?
@@ -52,6 +52,8 @@ class Main extends Component {
                     <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
                     <Redirect to='/login'/>
                 </Switch>
+
+                <SearchBar />
             </div>
         )
     }
