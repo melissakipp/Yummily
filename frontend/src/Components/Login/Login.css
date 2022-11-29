@@ -98,9 +98,4 @@ border-radius: 10px;
   display: flex;
   flex-direction: row;
 }
-  #HomeTitle{
-    color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  
