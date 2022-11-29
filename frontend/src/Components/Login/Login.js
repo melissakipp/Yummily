@@ -46,7 +46,7 @@ class Login extends Component {
 
     render(){
         return(   
-            <form className='Forms forms__signin'>
+            <div className='Forms forms__signin'>
                 <legend>Sign In Form</legend>
                 <label forHtml='username' class='sr-only'>Username</label>
                 <input
@@ -72,7 +72,7 @@ class Login extends Component {
                 />
                 <button className='btn__signin' id='SignInBttn' type='submit' onClick={this.handleLogin}>Sign in</button>
                 <Link id='NeedAccnt' to='/register'>Need an account?</Link>
-            </form>
+            </div>
         )
     }
 }

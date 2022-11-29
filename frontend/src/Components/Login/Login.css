@@ -98,7 +98,7 @@ border-radius: 10px;
   flex-direction: row;
 } */
 
-form {
+.Forms {
   background-color: aliceblue;
   border-radius: 8px;
   padding: 1rem;
