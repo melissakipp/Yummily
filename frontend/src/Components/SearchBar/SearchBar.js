@@ -2,9 +2,25 @@ import React from 'react';
 
 import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar({ placeholder, zipCode }) {
+
+    const Connection ='http://localhost:8081/restaurants/{zipCode}';
+    async function testConnection(e){
+        e.preventDefault();
+        const response = await fetch(Connection);
+        const jsonBody = await response.json();
+        console.log(jsonBody);
+    }
+
   return (
-    <div className='search'>SearchBar</div>
+    <section className='search'>
+      <form action="">
+        <label htmlFor="search-bar" className='sr-only'>Search for a restaurant</label>
+        <input type="text" name="search-bar" id="searchBar" className='search-field' placeholder={placeholder} />
+        <button onClick={testConnection}>Test</button>
+      </form>
+      
+    </section>
   )
 }
 

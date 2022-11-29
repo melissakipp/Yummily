@@ -45,36 +45,34 @@ class Login extends Component {
     }
 
     render(){
-        return(
-        
-            <div className='Forms'>
-                <h1>Please Sign In</h1>
-                <label class="sr-only">Username</label>
+        return(   
+            <form className='Forms forms__signin'>
+                <legend>Sign In Form</legend>
+                <label forHtml='username' class='sr-only'>Username</label>
                 <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    class="form-control"
-                    placeholder="Username or Email"
-                    v-model="user.username"
+                    type='text'
+                    id='username'
+                    name='username'
+                    class='form__field form-control'
+                    placeholder='Username or Email'
+                    v-model='user.username'
                     onChange={this.handleInputChange}
                     required
                 />
-                <label class="sr-only">Password</label>
+                <label forHtml='password' class='sr-only'>Password</label>
                 <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    class="form-control"
-                    placeholder="Password"
-                    v-model="user.password"
+                    type='password'
+                    id='password'
+                    name='password'
+                    class='form__field form-control'
+                    placeholder='Password'
+                    v-model='user.password'
                     onChange={this.handleInputChange}
                     required
                 />
-                <button id='SignInBttn' type="submit" onClick={this.handleLogin}>Sign in</button>
-
-                <Link id='NeedAccnt' to="/register">Need an account?</Link>
-            </div>
+                <button className='btn__signin' id='SignInBttn' type='submit' onClick={this.handleLogin}>Sign in</button>
+                <Link id='NeedAccnt' to='/register'>Need an account?</Link>
+            </form>
         )
     }
 }

@@ -1,6 +1,8 @@
-#HomeTitle {
-  color: aliceblue;
-  display: flex;
+.home-main {
   align-items: center;
+  background-color: aliceblue;
+  display: flex;
   justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }

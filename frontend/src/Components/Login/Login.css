@@ -1,11 +1,10 @@
-div{
-    display: inline-block;
-    width: 100%;
-
-  }
-  h1{
-    display: flex;
-    color: white;
+/* div{
+  display: inline-block;
+  width: 100%;
+} */
+/* h1{
+  display: flex;
+  color: white;
  justify-content: center;
     margin-left: auto;
  margin-right: auto;
@@ -97,5 +96,45 @@ border-radius: 10px;
 #MainLinks{
   display: flex;
   flex-direction: row;
+} */
+
+form {
+  background-color: aliceblue;
+  border-radius: 8px;
+  padding: 1rem;
 }
-  
+
+.forms__signin {
+  margin: 3rem 0 0 0;
+}
+
+legend {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  padding: .75rem;
+}
+
+input, label {
+  display: block;
+  margin: 1rem 1rem 1rem 0;
+  width: 100%;
+}
+
+.btn__signin {
+  border-radius: 8px;
+  background-color: #5AB1FF;
+  border: none;
+  display: block;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin: 0 0 1rem 0;
+  padding: 8px 40px 8px 40px;
+}
+
