@@ -7,8 +7,8 @@ function Home(props) {
 
     return(
         <main className='home-main'>
-            <h1>Welcome To The Home page!</h1>
-            <SearchBar placeholder="Search" />         
+            <h1>Welcome!</h1>
+            <SearchBar placeholder="Enter a zip code" />         
         </main>
     )
 }

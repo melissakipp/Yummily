@@ -1,8 +1,11 @@
 .home-main {
   align-items: center;
   background-color: aliceblue;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  margin: 3rem 0;
+  padding: 1rem;
 }
