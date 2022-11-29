@@ -1,0 +1,15 @@
+.main-header {
+  background-color: #0057A5;
+  border-radius: 8px;
+  display: flex;
+  height: 5vh;
+  justify-content: space-around;
+  margin: 1rem 0 0 0;
+  padding: 1rem;
+}
+
+#HomeLinkHome,
+#LogoutLink {
+  color: white;
+  text-decoration: none;
+}
