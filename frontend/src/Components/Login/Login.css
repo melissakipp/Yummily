@@ -138,3 +138,13 @@ input, label {
   padding: 8px 40px 8px 40px;
 }
 
+#HomeLinkLogin {
+  color: white;
+  background-color: #0057A5;
+  margin: .25rem 0 0 0;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+

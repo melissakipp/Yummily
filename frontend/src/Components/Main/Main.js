@@ -8,6 +8,8 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import React from 'react'
 
+import './Main.css';
+
 const mapStateToProps = state => {
     return {
         token: state.token,
@@ -32,27 +34,24 @@ class Main extends Component {
 
     render(){
         return(
-        
-            <div>
+            <>
+            {this.props.token.token !== undefined ?
+                    <header className='main-header' id='MainLinks'>
+                        <Link id='HomeLinkHome' to='/home'>Home</Link> 
+                        <Link id= 'LogoutLink' to='/login' onClick={this.handleLogout}>Logout</Link> 
+                        <Redirect to='/home'/>
+                    </header>  
+                : 
+                    <Link id='HomeLinkLogin'  to='/login'>Home</Link>
+            }
+            <Switch>
+                <Route path='/login' component={() => <Login/>}/>
+                <Route path='/register'component={() => <Register/>}/>
+                <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
+                <Redirect to='/login'/>
+            </Switch>
 
-                {this.props.token.token !== undefined ?
-                        <div id='MainLinks'>
-                            <Link id='HomeLinkHome' to='/home'>Home</Link> 
-                            <Link id= 'LogoutLink' to='/login' onClick={this.handleLogout}>Logout</Link> 
-                            <Redirect to='/home'/>
-
-                        </div>  
-                    : 
-                        <Link id='HomeLinkLogin'  to='/login'>Home</Link>
-                }
-                <Switch>
-                    <Route path='/login' component={() => <Login/>}/>
-                    <Route path='/register'component={() => <Register/>}/>
-                    <Route path='/home' component={this.props.token.token !== undefined ? () => <Home/> : null}/>
-                    <Redirect to='/login'/>
-                </Switch>
-
-            </div>
+            </>
         )
     }
 } 
