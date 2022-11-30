@@ -17,7 +17,7 @@ function SearchBar({ placeholder, zipCode }) {
       <form className='Forms' action="">
         <label htmlFor="search-bar" className='sr-only'>Search for a restaurant by zip code</label>
         <input type="text" name="search-bar" id="searchBar" className='search-field' placeholder={placeholder} />
-        <button onClick={testConnection}>Test</button>
+        <button className='btn__search' onClick={testConnection}>Test</button>
       </form>
       
     </section>

@@ -3,3 +3,16 @@
   align-items: center;
   flex-direction: column;
 }
+
+.btn__search {
+  border-radius: 8px;
+  background-color: #0057A5;
+  border: none;
+  color: #FFF6EF;
+  display: block;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin: 0 0 1rem 0;
+  padding: 8px 40px 8px 40px;
+}
