@@ -39,6 +39,11 @@ public class JdbcUserDao implements UserDao {
 	}
 
     @Override
+    public boolean validatePassword(String password) {
+        return false;
+    }
+
+    @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         String sql = "select * from users";

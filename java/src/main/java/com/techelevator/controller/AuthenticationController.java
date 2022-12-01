@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import javax.validation.Valid;
 
+import com.techelevator.model.*;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,10 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.LoginDTO;
-import com.techelevator.model.RegisterUserDTO;
-import com.techelevator.model.User;
-import com.techelevator.model.UserAlreadyExistsException;
 import com.techelevator.security.jwt.JWTFilter;
 import com.techelevator.security.jwt.TokenProvider;
 
@@ -54,7 +51,7 @@ public class AuthenticationController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public void register(@Valid @RequestBody RegisterUserDTO newUser) {
+    public void register(@Valid @RequestBody RegisterUserDTO newUser) throws PasswordValidationException {
         try {
             User userName = userDao.findByUsername(newUser.getUsername());
             if (userName != null) {
@@ -65,8 +62,44 @@ public class AuthenticationController {
                 throw new UserAlreadyExistsException();
             }
         } catch (UsernameNotFoundException e) {
-            userDao.create(newUser.getUsername(),newUser.getEmail(), newUser.getPassword(), newUser.getRole());
+            if(validatePassword(newUser.getPassword())!= false) {
+                userDao.create(newUser.getUsername(), newUser.getEmail(), newUser.getPassword(), newUser.getRole());
+            }else
+                throw new PasswordValidationException();
         }
+    }
+
+    static boolean validatePassword(String password) {
+    if(password.length() > 7){
+        if(checkPassword(password)){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        System.out.println("Password too short.");
+        return false;
+    }
+    }
+
+    static boolean checkPassword(String password) {
+       boolean hasNum = false; boolean hasCap = false; boolean hasLow = false; char c;
+       for(int i = 0; i < password.length(); i++){
+           c=password.charAt(i);
+           if(Character.isDigit(c)){
+               hasNum = true;
+           }
+           else if(Character.isUpperCase(c)){
+               hasCap = true;
+           }
+           else if(Character.isLowerCase(c)){
+               hasLow = true;
+           }
+           if(hasNum && hasCap && hasLow){
+               return true;
+           }
+       }
+       return false;
     }
 
     /**

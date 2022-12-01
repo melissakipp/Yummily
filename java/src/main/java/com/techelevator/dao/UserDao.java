@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface UserDao {
 
+    boolean validatePassword(String password);
+
     List<User> findAll();
 
     User getUserById(Long userId);

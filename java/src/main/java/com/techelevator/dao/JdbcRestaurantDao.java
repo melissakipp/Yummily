@@ -49,6 +49,56 @@ public class JdbcRestaurantDao implements RestaurantDao {
 
         return restaurants;
     }
+    @Override
+    public List<Restaurant> filterByType(String type){
+
+        List<Restaurant> restaurantByType = new ArrayList<>();
+
+
+        String sql = "select r.*,t.type" +
+                " from restaurants as r " +
+                "inner join type_of_food as t " +
+                "on t.type_id = r.type_of_food " +
+                "where t.type = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, type);
+        while (results.next()){
+            Restaurant restaurant = mapRowToRestaurant(results);
+            restaurantByType.add(restaurant);
+
+        }
+
+        return restaurantByType;
+
+    }
+    @Override
+    public List<Restaurant> filterByZipType(String zipCode, Integer type){
+
+        List<Restaurant> restaurantByZipType = new ArrayList<>();
+
+
+        String sql = "select r.*,t.type" +
+                " from restaurants as r " +
+                "inner join type_of_food as t " +
+                "on t.type_id = r.type_of_food " +
+                "where r.zip_code = ?" +
+                "and  r.type_of_food = ?";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, type);
+        while (results.next()){
+            Restaurant restaurant = mapRowToRestaurant(results);
+            restaurantByZipType.add(restaurant);
+
+        }
+
+        return restaurantByZipType;
+
+    }
+
+
+
+
+
 
     private Restaurant mapRowToRestaurant(SqlRowSet rs) {
         Restaurant restaurant = new Restaurant();

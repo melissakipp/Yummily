@@ -23,4 +23,16 @@ public class RestaurantController {
         return restaurantDao.findRestaurants(zipCode);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "restaurants/type={type}", method = RequestMethod.GET)
+    public List<Restaurant> filterByType(@PathVariable  String type) {
+        return restaurantDao.filterByType(type);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "restaurants/{zipCode}/{type}", method = RequestMethod.GET)
+    public List<Restaurant> filterByZipType(@PathVariable  String zipCode, Integer type) {
+        return restaurantDao.filterByZipType(zipCode, type);
+    }
+
 }
