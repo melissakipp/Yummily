@@ -36,13 +36,13 @@ class Main extends Component {
         return(
             <>
             {this.props.token.token !== undefined ?
-                    <header className='main-header' id='MainLinks'>
-                        <Link id='HomeLinkHome' to='/home'>Home</Link> 
-                        <Link id= 'LogoutLink' to='/login' onClick={this.handleLogout}>Logout</Link> 
-                        <Redirect to='/home'/>
-                    </header>  
+                <header className='main-header' id='MainLinks'>
+                    <Link id='HomeLinkHome' to='/home'>Home</Link> 
+                    <Link id='LogoutLink' to='/login' onClick={this.handleLogout}>Logout</Link> 
+                    <Redirect to='/home'/>
+                </header>  
                 : 
-                    <Link id='HomeLinkLogin'  to='/login'>Home</Link>
+                <Link id='HomeLinkLogin'  to='/login'>Home</Link>
             }
             <Switch>
                 <Route path='/login' component={() => <Login/>}/>
