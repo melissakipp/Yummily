@@ -1,13 +1,12 @@
-import { Component } from 'react'
-import {Link} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
-import {addToken, addUser} from '../../Redux/actionCreators'
-import {baseUrl} from '../../Shared/baseUrl'
-import axios from 'axios'
+import { Component } from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import {addToken, addUser} from '../../Redux/actionCreators';
+import {baseUrl} from '../../Shared/baseUrl';
+import axios from 'axios';
+
 import './Login.css';
-
-
 
 const mapDispatchToProps = (dispatch) => ({
     addToken: () =>  dispatch(addToken()),
@@ -46,25 +45,28 @@ class Login extends Component {
 
     render(){
         return(   
-            <div className='Forms forms__signin'>
+            <div className='form__signup'>
+                <div className='Forms'>
+
+                
                 <legend>Sign In Form</legend>
-                <label forHtml='username' class='sr-only'>Username</label>
+                <label forHtml='username' className='sr-only'>Username</label>
                 <input
                     type='text'
                     id='username'
                     name='username'
-                    class='form__field form-control'
+                    className='form__field form-control'
                     placeholder='Username or Email'
                     v-model='user.username'
                     onChange={this.handleInputChange}
                     required
                 />
-                <label forHtml='password' class='sr-only'>Password</label>
+                <label forHtml='password' className='sr-only'>Password</label>
                 <input
                     type='password'
                     id='password'
                     name='password'
-                    class='form__field form-control'
+                    className='form__field form-control'
                     placeholder='Password'
                     v-model='user.password'
                     onChange={this.handleInputChange}
@@ -72,6 +74,7 @@ class Login extends Component {
                 />
                 <button className='btn__signin' id='SignInBttn' type='submit' onClick={this.handleLogin}>Sign in</button>
                 <Link id='NeedAccnt' to='/register'>Need an account?</Link>
+                </div>
             </div>
         )
     }
