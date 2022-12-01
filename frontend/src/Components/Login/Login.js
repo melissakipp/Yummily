@@ -47,15 +47,13 @@ class Login extends Component {
         return(   
             <div className='form__signup'>
                 <div className='Forms'>
-
-                
                 <legend>Sign In Form</legend>
                 <label forHtml='username' className='sr-only'>Username</label>
                 <input
                     type='text'
                     id='username'
                     name='username'
-                    className='form__field form-control'
+                    className='form__field'
                     placeholder='Username or Email'
                     v-model='user.username'
                     onChange={this.handleInputChange}
@@ -66,7 +64,7 @@ class Login extends Component {
                     type='password'
                     id='password'
                     name='password'
-                    className='form__field form-control'
+                    className='form__field'
                     placeholder='Password'
                     v-model='user.password'
                     onChange={this.handleInputChange}
