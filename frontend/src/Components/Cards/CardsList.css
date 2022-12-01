@@ -1,0 +1,10 @@
+.cards-list {
+  padding: 1rem;
+  outline: 2px solid green;
+}
+
+.card-container {
+  margin: auto;
+
+  outline: 2px solid red;
+}
