@@ -20,14 +20,16 @@ The database superuser—meaning `postgres`—must only be used for database adm
 - IntelliJ: navigate to `final-capstone\src\main\java\com\techelevator\Application.java` and click 'Run'
 - Go to your browser and go to http://localhost:8081
 <br />
-3. Start React frontend <br />
+3. Start React frontend
 ```
 cd final-capstone\fronend
 npm install
 npm start
 ```
 - Go to your browser and go to http://localhost:3000
+<br />
 ## Figma Prototype
+<br />
 <img  alt="Prototype of home page and Sign in" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_home&login.jpg" />
 <br />
 <img  alt="Prototype of create page and search" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_create&search.jpg" />
