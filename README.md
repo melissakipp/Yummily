@@ -27,10 +27,11 @@ npm install
 npm start
 ```
 - Go to your browser and `http://localhost:3000'
+<br />
 ## Figma Prototype
 
-![prototype_home&logon.jpg](java\src\main\resources\images\prototype_home&logon.jpg)
+![prototype_home&logon.jpg](https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_home%26login.jpg)
 <br />
-![prototype(create&search).jpg](java\src\main\resources\images\prototype_create&search.jpg)
+![prototype(create&search).jpg](https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_create%26search.jpg)
 
 *Transfer from GitLabs to GitHub*
