@@ -27,8 +27,9 @@ cd final-capstone\fronend
 npm install
 npm start
 ```
+<br />
 - Go to your browser and go to http://localhost:3000
-
+<br />
 ## Figma Prototype
 
 <img  alt="Prototype of home page and Sign in" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_home&login.jpg" />
