@@ -26,6 +26,9 @@ cd final-capstone\fronend
 npm install
 npm start
 ```
+- Go to your browser and `http://localhost:3000'
+## Figma Prototype
+
 ![prototype_home&logon.jpg](java\src\main\resources\images\prototype_home&logon.jpg)
 <br />
 ![prototype(create&search).jpg](java\src\main\resources\images\prototype_create&search.jpg)
