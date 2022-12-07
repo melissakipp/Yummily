@@ -17,7 +17,7 @@ public class RestaurantController {
         this.restaurantDao = restaurantDao;
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/restaurants/{zipCode}", method = RequestMethod.GET)
     public List<Restaurant> getRestaurantsByZipCode(@PathVariable String zipCode) {
         return restaurantDao.findRestaurants(zipCode);
