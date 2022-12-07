@@ -4,7 +4,7 @@ First project practicing Agile methodologies with three team members, the goal w
 
 ## Steps to get the application up and running
 1. Setting up database <br />
-```shell
+```
 cd final-capstone\java\database
 ./create.sh
 ```
@@ -22,7 +22,7 @@ The database superuser—meaning `postgres`—must only be used for database adm
 <br />
 3. Start React frontend 
 <br />
-```shell
+```
 cd final-capstone\fronend
 npm install
 npm start
