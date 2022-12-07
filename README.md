@@ -33,6 +33,6 @@ npm start
 <img  alt="Prototype of home page and Sign in" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_home&login.jpg" />
 <br />
 <br />
-<img  alt="Prototype of create page and search" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_create%26search.jpg" />
+<img  alt="Prototype of create page and search" width="100%" style="padding-right:10px;" src="https://github.com/melissakipp/Yummily/blob/main/java/src/main/resources/images/prototype_create&search.jpg" />
 
 *Transfer from GitLabs to GitHub*
